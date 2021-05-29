@@ -17,7 +17,6 @@ public:
     ~MainWindow();
     void setupRealtimeDataDemo(QCustomPlot *customPlot);
 private slots:
-    void makePlot();
     void realtimeDataSlot();
 private:
     Ui::MainWindow *ui;

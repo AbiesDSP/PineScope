@@ -17,6 +17,7 @@ MainWindow::~MainWindow()
 void MainWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
   demoName = "Real Time Data Demo";
+  const double lw = 1.5;
   
   // include this section to fully disable antialiasing for higher performance:
   /*
@@ -28,9 +29,9 @@ void MainWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->legend->setFont(font);
   */
   customPlot->addGraph(); // blue line
-  customPlot->graph(0)->setPen(QPen(QColor(40, 110, 255)));
+  customPlot->graph(0)->setPen(QPen(QColor(40, 110, 255), lw));
   customPlot->addGraph(); // red line
-  customPlot->graph(1)->setPen(QPen(QColor(255, 110, 40)));
+  customPlot->graph(1)->setPen(QPen(QColor(255, 110, 40), lw));
 
   QSharedPointer<QCPAxisTickerTime> timeTicker(new QCPAxisTickerTime);
   timeTicker->setTimeFormat("%h:%m:%s");
@@ -56,8 +57,8 @@ void MainWindow::realtimeDataSlot()
   if (key-lastPointKey > 0.002) // at most add point every 2 ms
   {
     // add data to lines:
-    ui->customPlot->graph(0)->addData(key, qSin(key)+std::rand()/(double)RAND_MAX*1*qSin(key/0.3843));
-    ui->customPlot->graph(1)->addData(key, qCos(key)+std::rand()/(double)RAND_MAX*0.5*qSin(key/0.4364));
+    ui->customPlot->graph(0)->addData(key, qSin(key));
+    ui->customPlot->graph(1)->addData(key, qCos(key));
     // rescale value (vertical) axis to fit the current data:
     //ui->customPlot->graph(0)->rescaleValueAxis();
     //ui->customPlot->graph(1)->rescaleValueAxis(true);
@@ -81,25 +82,4 @@ void MainWindow::realtimeDataSlot()
     lastFpsKey = key;
     frameCount = 0;
   }
-}
-
-void MainWindow::makePlot()
-{
-    // generate some data:
-    QVector<double> x(101), y(101); // initialize with entries 0..100
-    for (int i=0; i<101; ++i)
-    {
-      x[i] = i/50.0 - 1; // x goes from -1 to 1
-      y[i] = x[i]*x[i]; // let's plot a quadratic function
-    }
-    // create graph and assign data to it:
-    ui->customPlot->addGraph();
-    ui->customPlot->graph(0)->setData(x, y);
-    // give the axes some labels:
-    ui->customPlot->xAxis->setLabel("x");
-    ui->customPlot->yAxis->setLabel("y");
-    // set axes ranges, so we see all data:
-    ui->customPlot->xAxis->setRange(-1, 1);
-    ui->customPlot->yAxis->setRange(0, 1);
-    ui->customPlot->replot();
 }
