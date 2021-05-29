@@ -1,11 +1,7 @@
 [Desktop Entry]
-Version=1.0
-Name=PineScope
-Comment=Serial Oscilloscope GUI
-Exec=PineScope
-Icon=CMakeSetup
-Terminal=false
-X-MultipleArgs=false
 Type=Application
-Categories=Development;
-StartupNotify=true
+Name=PineScope
+Path=/usr/bin/
+Exec=PineScope
+Icon=...
+Terminal=False
