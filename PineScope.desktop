@@ -1,7 +1,8 @@
 [Desktop Entry]
 Type=Application
 Name=PineScope
-Path=/usr/bin/
+Path=/usr/bin
 Exec=PineScope
-Icon=...
+Icon=/usr/share/icons/PineScopeIcon.png
 Terminal=False
+Categories=Utility;Application;
