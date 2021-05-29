@@ -17,7 +17,7 @@ MainWindow::~MainWindow()
 void MainWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
   demoName = "Real Time Data Demo";
-  const double lw = 1.5;
+  const double lw = 4.5;
   
   // include this section to fully disable antialiasing for higher performance:
   /*
@@ -57,8 +57,8 @@ void MainWindow::realtimeDataSlot()
   if (key-lastPointKey > 0.002) // at most add point every 2 ms
   {
     // add data to lines:
-    ui->customPlot->graph(0)->addData(key, qSin(key));
-    ui->customPlot->graph(1)->addData(key, qCos(key));
+    ui->customPlot->graph(0)->addData(key, qSin(4*key));
+    ui->customPlot->graph(1)->addData(key, qCos(4*key));
     // rescale value (vertical) axis to fit the current data:
     //ui->customPlot->graph(0)->rescaleValueAxis();
     //ui->customPlot->graph(1)->rescaleValueAxis(true);
