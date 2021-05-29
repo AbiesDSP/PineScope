@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,8 +15,13 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    void setupRealtimeDataDemo(QCustomPlot *customPlot);
+private slots:
+    void makePlot();
+    void realtimeDataSlot();
 private:
     Ui::MainWindow *ui;
+    QString demoName;
+    QTimer dataTimer;
 };
 #endif // MAINWINDOW_H
