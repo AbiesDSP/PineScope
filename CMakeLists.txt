@@ -1,12 +1,27 @@
-project(PineScope)
 cmake_minimum_required(VERSION 3.10)
+project(PineScope VERSION 1.0.0 LANGUAGES CXX)
 
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(hello main.c)
-target_link_libraries(hello PRIVATE ${GTK3_LIBRARIES})
-message(${GTK3_CFLAGS_OTHER})
-# target_compile_definitions(hello PRIVATE ${GTK3_CFLAGS_OTHER})
-target_include_directories(hello PRIVATE ${GTK3_INCLUDE_DIRS})
-target_link_directories(hello PRIVATE ${GTK3_LIBRARY_DIRS})
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+find_package(Qt5 COMPONENTS Widgets PrintSupport REQUIRED)
+
+add_executable(PineScope
+    mainwindow.ui
+    qcustomplot.cpp
+    mainwindow.cpp
+    main.cpp
+    resources.qrc
+)
+target_include_directories(PineScope PRIVATE ${CMAKE_SOURCE_DIR})
+
+target_link_libraries(PineScope Qt5::Widgets Qt5::PrintSupport)
+
+# Install desktop files and binaries.
+install(TARGETS PineScope RUNTIME DESTINATION /usr/bin)
+install(FILES images/PineScopeIcon.png DESTINATION /usr/share/icons)
+install(FILES PineScope.desktop DESTINATION /usr/share/applications)
