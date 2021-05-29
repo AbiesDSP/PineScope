@@ -9,16 +9,16 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-    qcustomplot.cpp
+    gui/main.cpp \
+    gui/mainwindow.cpp \
+    gui/qcustomplot.cpp
 
 HEADERS += \
-    mainwindow.h \
-    qcustomplot.h
+    gui/mainwindow.h \
+    gui/qcustomplot.h
 
 FORMS += \
-    mainwindow.ui
+    gui/mainwindow.ui
 
 RC_ICONS = icon.png
 # Default rules for deployment.

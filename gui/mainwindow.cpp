@@ -35,7 +35,7 @@ MainWindow::~MainWindow()
 void MainWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
   demoName = "Real Time Data Demo";
-  const double lw = 4.5;
+  const double lw = 1.0;
   
   // include this section to fully disable antialiasing for higher performance:
   /*
