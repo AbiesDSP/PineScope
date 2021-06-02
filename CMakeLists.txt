@@ -5,8 +5,19 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_AUTOMOC ON)
+set(QT_MOC_EXECUTABLE /usr/bin/moc)
+add_executable(Qt5::moc IMPORTED)
+set_property(TARGET Qt5::moc PROPERTY IMPORTED_LOCATION ${QT_MOC_EXECUTABLE})
+
 set(CMAKE_AUTORCC ON)
+set(QT_RCC_EXECUTABLE /usr/bin/rcc)
+add_executable(Qt5::rcc IMPORTED)
+set_property(TARGET Qt5::rcc PROPERTY IMPORTED_LOCATION ${QT_RCC_EXECUTABLE})
+
 set(CMAKE_AUTOUIC ON)
+set(QT_UIC_EXECUTABLE /usr/bin/uic)
+add_executable(Qt5::uic IMPORTED)
+set_property(TARGET Qt5::uic PROPERTY IMPORTED_LOCATION ${QT_UIC_EXECUTABLE})
 
 find_package(Qt5 COMPONENTS Widgets PrintSupport REQUIRED)
 
