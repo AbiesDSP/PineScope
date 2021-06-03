@@ -1,0 +1,19 @@
+{
+	"BUILD_DIR" : "/home/frank/PineScope/cmake-build/PineScope_autogen",
+	"CMAKE_BINARY_DIR" : "/home/frank/PineScope/cmake-build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/frank/PineScope/cmake-build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/frank/PineScope",
+	"CMAKE_SOURCE_DIR" : "/home/frank/PineScope",
+	"INCLUDE_DIR" : "/home/frank/PineScope/cmake-build/PineScope_autogen/include",
+	"INPUTS" : [ "/home/frank/images/PineScopeIcon.png" ],
+	"LOCK_FILE" : "/home/frank/PineScope/cmake-build/CMakeFiles/PineScope_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/usr/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/frank/PineScope/cmake-build/CMakeFiles/PineScope_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/frank/PineScope/resources.qrc",
+	"VERBOSITY" : 0
+}

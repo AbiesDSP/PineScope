@@ -1,0 +1,10 @@
+/home/frank/PineScope/cmake-build/CMakeFiles/install/strip.dir
+/home/frank/PineScope/cmake-build/CMakeFiles/install/local.dir
+/home/frank/PineScope/cmake-build/CMakeFiles/edit_cache.dir
+/home/frank/PineScope/cmake-build/CMakeFiles/install.dir
+/home/frank/PineScope/cmake-build/CMakeFiles/list_install_components.dir
+/home/frank/PineScope/cmake-build/CMakeFiles/rebuild_cache.dir
+/home/frank/PineScope/cmake-build/CMakeFiles/PineScope.dir
+/home/frank/PineScope/cmake-build/CMakeFiles/QCustomPlot.dir
+/home/frank/PineScope/cmake-build/CMakeFiles/PineScope_autogen.dir
+/home/frank/PineScope/cmake-build/CMakeFiles/QCustomPlot_autogen.dir
